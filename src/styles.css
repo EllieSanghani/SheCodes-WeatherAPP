@@ -1,0 +1,31 @@
+.col-2 {
+  display: inline-block;
+  padding: 0px;
+}
+section .col-12,
+.emoji {
+  text-align: center;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
+
+.extraInfo {
+  font-size: 14px;
+}
+.col-6 main {
+  text-align: left;
+}
+
+.day {
+  color: #3e3e3e;
+}
+.temp {
+  color: #747474;
+}
+.dayEmoji,
+.dayTemp {
+  font-size: 60px;
+  display: inline;
+  padding-left: 10px;
+}

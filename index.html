@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card-body">
+        <form id="search-form">
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="Enter City"
+              autocomplete="off"
+              id="search-city-input"
+            />
+            <input type="submit" value="Search" class="searchButton" />
+            <button class="location">Current Location</button>
+          </div>
+        </form>
+      </div>
+      <h5 id="current-city">London</h5>
+      <h5 id="current-date">12.30pm</h5>
+      <h5 id="currentWeather">Rain</h5>
+
+      <div class="row">
+        <div class="col-4">
+          <main class="dayEmoji">☔</main>
+          <h1 class="dayTemp">
+            <strong> 23° </strong>
+          </h1>
+        </div>
+        <div class="col-4" id="converter">
+          <br />
+          <br />
+          <a class="ctemp" id="celcius" href="#">°C</a> |
+          <a class="ftemp" id="fahrenheit" href="#">°F</a>
+        </div>
+
+        <div class="col-4">
+          <main class="extraInfo">
+            <span id="humidity">Humidity: 12% </span> <br />
+            <span id="wind-speed"> Wind: 10mph </span>
+          </main>
+        </div>
+      </div>
+      <br />
+
+      <section class="week">
+        <div class="col-2">
+          <h1 class="emoji">☂️</h1>
+          <div class="col-12">
+            <h5 class="temp"><strong class="day">23° </strong> 12°</h5>
+            <div class="col-12">
+              <p>Monday</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <h1 class="emoji">☂️</h1>
+          <div class="col-12">
+            <h5 class="temp"><strong class="day">23° </strong> 12°</h5>
+            <div class="col-12">
+              <p>Tuesday</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <h1 class="emoji">☂️</h1>
+          <div class="col-12">
+            <h5 class="temp"><strong class="day">23° </strong> 12°</h5>
+            <div class="col-12">
+              <p>Wednesday</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <h1 class="emoji">☂️</h1>
+          <div class="col-12">
+            <h5 class="temp"><strong class="day">23° </strong> 12°</h5>
+            <div class="col-12">
+              <p>Thursday</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <h1 class="emoji">☂️</h1>
+          <div class="col-12">
+            <h5 class="temp"><strong class="day">23° </strong> 12°</h5>
+            <div class="col-12">
+              <p>Friday</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://github.com/EllieSanghani/SheCodes" target="_blank">
+          Git Hub Repository
+        </a>
+      </section>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
