@@ -62,7 +62,7 @@ let minutes = [
   "57",
   "58",
   "59",
-  "60"
+  "60",
 ];
 
 let days = [
@@ -72,7 +72,7 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 
 let months = [
@@ -87,7 +87,7 @@ let months = [
   "September",
   "October",
   "November",
-  "December"
+  "December",
 ];
 
 let currentDate = now.getDate();
@@ -113,6 +113,7 @@ function showTemp(response) {
     "#wind-speed"
   ).innerHTML = `Wind Speed: ${currentWindSpeed}mph`;
 }
+
 function search(event) {
   event.preventDefault();
   let apiKey = "087f0ef7dd56ce65c496f8db8c2c8fa0";
