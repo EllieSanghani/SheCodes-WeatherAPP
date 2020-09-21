@@ -21,6 +21,8 @@
   height: 45px;
   border-radius: 23px;
   margin-right: 0px;
+  border: 2px solid rgb(14, 109, 109);
+  box-shadow: 2px 2px 5px rgb(177, 177, 177);
 }
 
 #current-city {
@@ -34,7 +36,12 @@
   font-family: monospace;
 }
 .currentInfo {
-  margin: 20px 20px 30px 20px;
+  margin: 20px 20px 20px 20px;
+}
+
+.extraInfo {
+  text-align: center;
+  margin: 20px;
 }
 
 .vl {
@@ -76,9 +83,23 @@ section .col-12,
 }
 
 #forcast {
-  text-align: center;
+  text-align: right;
   display: inline;
-  font-size: 34px;
+  font-size: 55px;
+  padding: 0px;
+}
+
+#converter {
+  margin-left: 10px;
+}
+.cTemp,
+.fTemp {
+  border-radius: 8px;
+  width: 35px;
+  height: 35px;
+  padding: 3px;
+  border: 2px solid, white;
+  color: white;
 }
 
 .week {
