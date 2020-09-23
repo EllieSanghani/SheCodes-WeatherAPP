@@ -165,7 +165,7 @@ function currentPosition() {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
-let button = document.querySelector(".searchButton");
+let button = document.querySelector("button");
 button.addEventListener("click", currentPosition);
 
 function cConv(event) {
