@@ -119,23 +119,21 @@ function showTemp(response) {
   ).innerHTML = `Conditions: ${conditions}`;
 }
 
-function showForecast(response) {
-  let forecastElement = document.querySelector("#forecast");
+//function showForecast(response) {
+//let forecastElement = document.querySelector("#forecast");
 
-  forecastElement.innerHTML = ` 
-  
-        <div class="col-2">
-          <h1 class="emoji">🌦</h1>
-          <div class="col-12">
-            <h5 class="temp"><strong class="day">23° </strong> 12° </h5>
-            <div class="col-12">
-              <p>Monday</p>
-            </div>
-          </div>
-        </div>
-        <div class="vl"></div>
-  `;
-}
+//forecastElement.innerHTML = `
+
+// <div class="col-2">
+//  <h1 class="emoji">🌦</h1>
+//  <div class="col-12">
+//  <h5 class="temp"><strong class="day">23° </strong> 12° </h5>
+//  <div class="col-12">
+//    <p>Monday</p>
+//  </div>
+// </div>
+// </div>
+// <div class="vl"></div> `;}
 
 function search(event) {
   event.preventDefault();
@@ -144,8 +142,8 @@ function search(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemp);
 
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showForecast);
+  //apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid${apiKey}&units=metric`;
+  //axios.get(apiUrl).then(showForecast);
 }
 let currentTemp = document.querySelector("#search-form");
 currentTemp.addEventListener("submit", search);
