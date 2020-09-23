@@ -163,7 +163,7 @@ function currentPosition() {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
-let button = document.querySelector("button");
+let button = document.querySelector(".location");
 button.addEventListener("click", currentPosition);
 
 function cConv(event) {
