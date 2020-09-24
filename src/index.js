@@ -153,22 +153,12 @@ function currentPosition() {
 let button = document.querySelector(".location");
 button.addEventListener("click", currentPosition);
 
-function cConv(event) {
-  event.preventDefault();
-  let cConversion = document.querySelector(".dayTemp");
-  let ctemperature = cConversion.innerHTML;
-  cConversion.innerHTML = "23°";
-}
-
-let cLink = document.querySelector("#celcius");
-cLink.addEventListener("click", cConv);
-
 function fahrenheitConversion(event) {
   event.preventDefault();
-  let currentTemperature = document.querySelector(".dayTemp");
-  let fahrenheitTemperature = (currentTemperature.innerHTML * 9) / 5 + 32;
-  currentTemperature.innerHTML = fahrenheitTemperature;
+  let temperatureElement = document.querySelector(".dayTemp");
+  let fahrenheitTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
+  temperatureElement.innerHTML = fahrenheitTemperature;
 }
 
-let fLink = document.querySelector("#fahrenheit");
-fLink.addEventListener("click", fahrenheitConversion);
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", fahrenheitConversion);
