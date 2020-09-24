@@ -163,12 +163,12 @@ function cConv(event) {
 let cLink = document.querySelector("#celcius");
 cLink.addEventListener("click", cConv);
 
-function fConv(event) {
+function fahrenheitConversion(event) {
   event.preventDefault();
-  let fConversion = document.querySelector(".dayTemp");
-  let ftemperature = fConversion.innerHTML;
-  fConversion.innerHTML = "73°";
+  let currentTemperature = document.querySelector(".dayTemp");
+  let fahrenheitTemperature = (currentTemperature.innerHTML * 9) / 5 + 32;
+  currentTemperature.innerHTML = fahrenheitTemperature;
 }
 
 let fLink = document.querySelector("#fahrenheit");
-fLink.addEventListener("click", fConv);
+fLink.addEventListener("click", fahrenheitConversion);
