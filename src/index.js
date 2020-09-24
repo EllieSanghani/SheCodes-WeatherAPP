@@ -103,6 +103,9 @@ function showTemp(response) {
   console.log(response);
   document.querySelector("#current-city").innerHTML = response.data.name;
   let currentTemperature = Math.round(response.data.main.temp);
+
+  celciusTemperature = response.data.main.temp;
+
   document.querySelector(".dayTemp").innerHTML = `${currentTemperature}°`;
   let currentHumidity = Math.round(response.data.main.humidity);
   document.querySelector(
@@ -155,10 +158,25 @@ button.addEventListener("click", currentPosition);
 
 function fahrenheitConversion(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector(".dayTemp");
-  let fahrenheitTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
-  temperatureElement.innerHTML = fahrenheitTemperature;
+  let fConversion = document.querySelector(".dayTemp");
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  fConversion.innerHTML = Math.round(fahrenheitTemperature) + "°";
 }
+
+function celciusConversion(event) {
+  event.preventDefault();
+  let fConversion = document.querySelector(".dayTemp");
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  fConversion.innerHTML = Math.round(celciusTemperature) + "°";
+}
+
+let celciusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", fahrenheitConversion);
+
+let celciusLink = document.querySelector("#celcius");
+celciusLink.addEventListener("click", celciusConversion);

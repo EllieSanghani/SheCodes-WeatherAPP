@@ -20,7 +20,8 @@
   display: block;
   margin: 0 auto;
 }
-button {
+.searchbutton,
+.location {
   width: 45px;
   height: 45px;
   border-radius: 23px;
@@ -100,14 +101,21 @@ section .col-12,
 }
 .cTemp,
 .fTemp {
-  border-radius: 8px;
   width: 35px;
   height: 35px;
   padding: 3px;
-  border: 2px solid, white;
-  color: white;
+  border: none;
 }
 
+.active,
+.cTemp {
+  color: #3e3e3e;
+  cursor: default;
+}
+.active,
+:hover {
+  text-decoration: none;
+}
 .week {
   display: block;
   margin: 15px auto;
