@@ -132,7 +132,8 @@ function showForecast(response) {
   let weekForecast = document.querySelector("#forecast");
   let forecast = response.data.list[0];
 
-  weekForecast.innerHTML = `  <div class="col-3">
+  weekForecast.innerHTML = ` 
+           <div class="col-3">
             <img
               src="http://openweathermap.org/img/wn/10d@2x.png"
               id="icon"
@@ -159,7 +160,7 @@ function search(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemp);
 
-  apiUrl = `https://api.openweathermap.org/data/2.5/forcast?q=${cityName}&appid=${apiKey}&units=metric`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showForecast);
 }
 let currentTemp = document.querySelector("#search-form");
