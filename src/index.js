@@ -131,7 +131,29 @@ function showForecast(response) {
   let weekForecast = document.querySelector("#forecast");
   console.log(response.data.list[0]);
 
-  
+  let forecast = response.data.list[0];
+
+  weekForecast.innerHTML = ` 
+           <div class="col-3">
+            <img
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              id="icon"
+              class="emoji"
+            />
+            <div class="col-12">
+              <h5 class="temp">
+                <strong class="day">${Math.round(
+                  forecast.main.temp_max
+                )}° </strong> 
+                <span> ${Math.round(forecast.main.temp_min)}°</span> 
+              </h5>
+              <div class="col-12">
+                <p>Monday</p>
+              </div>
+            </div>
+          </div>
+          <div class="vl"></div> `;
+}
 
 function search(event) {
   event.preventDefault();
