@@ -100,7 +100,6 @@ let currentDay = days[now.getDay()];
 formatDate.innerHTML = ` ${currentHour}:${currentMinutes} ${currentDay}, ${currentMonth} ${currentDate} ${currentYear} `;
 
 function showTemp(response) {
-  console.log(response);
   document.querySelector("#current-city").innerHTML = response.data.name;
   let currentTemperature = Math.round(response.data.main.temp);
 
@@ -130,28 +129,9 @@ function showTemp(response) {
 
 function showForecast(response) {
   let weekForecast = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
+  console.log(response.data.list[0]);
 
-  weekForecast.innerHTML = ` 
-           <div class="col-3">
-            <img
-              src="http://openweathermap.org/img/wn/10d@2x.png"
-              id="icon"
-              class="emoji"
-            />
-            <div class="col-12">
-              <h5 class="temp">
-                <strong class="day"> ${Math.round(
-                  forecast.main.temp_max
-                )}° </strong> <span> 12°</span> 
-              </h5>
-              <div class="col-12">
-                <p>Monday</p>
-              </div>
-            </div>
-          </div>
-          <div class="vl"></div> `;
-}
+  
 
 function search(event) {
   event.preventDefault();
@@ -172,7 +152,6 @@ function showPosition(position) {
   let apiKey = "087f0ef7dd56ce65c496f8db8c2c8fa0";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
-  console.log(apiUrl);
 
   axios.get(apiUrl).then(showTemp);
 }
