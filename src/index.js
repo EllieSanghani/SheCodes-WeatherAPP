@@ -128,9 +128,11 @@ function showTemp(response) {
   );
 }
 
-function showForcast(response) {
-document.querySelector("#forecast").innerHTML = `
-          <div class="col-3">
+function showForecast(response) {
+  let weekForecast = document.querySelector("#forecast");
+  let forecast = response.data.list[0];
+
+  weekForecast.innerHTML = `  <div class="col-3">
             <img
               src="http://openweathermap.org/img/wn/10d@2x.png"
               id="icon"
@@ -138,17 +140,16 @@ document.querySelector("#forecast").innerHTML = `
             />
             <div class="col-12">
               <h5 class="temp">
-                <strong class="day"> </strong> <span> 12°</span>
+                <strong class="day"> ${Math.round(
+                  forecast.main.temp_max
+                )}° </strong> <span> 12°</span> 
               </h5>
               <div class="col-12">
                 <p>Monday</p>
               </div>
             </div>
           </div>
-          <div class="vl"></div> `;;
-  let forecast = response.data.list[0];
-
-  weeklyForecast.innerHTML = 
+          <div class="vl"></div> `;
 }
 
 function search(event) {
@@ -159,7 +160,7 @@ function search(event) {
   axios.get(apiUrl).then(showTemp);
 
   apiUrl = `https://api.openweathermap.org/data/2.5/forcast?q=${cityName}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showForcast);
+  axios.get(apiUrl).then(showForecast);
 }
 let currentTemp = document.querySelector("#search-form");
 currentTemp.addEventListener("submit", search);
