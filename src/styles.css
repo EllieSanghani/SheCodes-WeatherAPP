@@ -60,10 +60,10 @@ div .col-3 {
   display: inline-block;
   margin: 0px auto;
   padding: 0px;
-  width: 255px;
+  width: 24%;
 }
 
-section .col-12,
+div .col-12,
 .emoji {
   text-align: center;
   display: inline-block;

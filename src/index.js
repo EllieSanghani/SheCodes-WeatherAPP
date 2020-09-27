@@ -128,12 +128,38 @@ function showTemp(response) {
   );
 }
 
+function showForcast(response) {
+document.querySelector("#forecast").innerHTML = `
+          <div class="col-3">
+            <img
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              id="icon"
+              class="emoji"
+            />
+            <div class="col-12">
+              <h5 class="temp">
+                <strong class="day"> </strong> <span> 12°</span>
+              </h5>
+              <div class="col-12">
+                <p>Monday</p>
+              </div>
+            </div>
+          </div>
+          <div class="vl"></div> `;;
+  let forecast = response.data.list[0];
+
+  weeklyForecast.innerHTML = 
+}
+
 function search(event) {
   event.preventDefault();
   let apiKey = "087f0ef7dd56ce65c496f8db8c2c8fa0";
   let cityName = document.querySelector("#search-city-input").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemp);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forcast?q=${cityName}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForcast);
 }
 let currentTemp = document.querySelector("#search-form");
 currentTemp.addEventListener("submit", search);
