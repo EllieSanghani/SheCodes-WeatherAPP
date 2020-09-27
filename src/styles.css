@@ -1,7 +1,7 @@
 .container {
   display: block;
   margin: 15px auto;
-  border: 2px solid grey;
+  border: 2px solid rgb(14, 109, 109);
   padding: 20px;
   border-radius: 10px;
   width: 100%;
@@ -27,16 +27,28 @@
   border-radius: 23px;
   margin-right: 0px;
   border: 2px solid rgb(14, 109, 109);
+  background-color: white;
   box-shadow: 2px 2px 5px rgb(177, 177, 177);
+  transition: all 200ms ease-in-out;
+}
+.searchbutton:hover {
+  background-color: rgb(14, 109, 109);
+  color: white;
+}
+
+.location:hover {
+  background-color: rgb(14, 109, 109);
+  color: white;
 }
 
 #current-city {
   text-align: center;
   font-family: monospace;
   font-size: 50px;
+  color: rgb(14, 109, 109);
 }
 #current-date,
-#currentWeather {
+.extraInfo {
   text-align: center;
   font-family: monospace;
 }
@@ -46,12 +58,15 @@
 
 .extraInfo {
   text-align: center;
-  margin: 20px;
+  margin: 10px 0px;
+  padding: 10px;
+  background: rgb(139, 201, 201);
+  border-radius: 6px;
 }
 
 .vl {
   display: inline-block;
-  border-left: 1px solid #dddddd;
+  border-left: 1px solid rgb(14, 109, 109);
   height: 70px;
   margin: 0px;
 }
@@ -119,7 +134,7 @@ div .col-12,
 .week {
   display: block;
   margin: 15px auto;
-  border: 1px solid rgb(207, 207, 207);
+  border: 1px solid rgb(14, 109, 109);
   padding: 15px 20px;
   border-radius: 10px;
   width: 100%;

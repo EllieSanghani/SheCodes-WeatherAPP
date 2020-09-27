@@ -99,6 +99,19 @@ let currentDay = days[now.getDay()];
 
 formatDate.innerHTML = ` ${currentHour}:${currentMinutes} ${currentDay}, ${currentMonth} ${currentDate} ${currentYear} `;
 
+function formatHours(timestamp) {
+  let now = new Date(timestamp);
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
 function showTemp(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
   let currentTemperature = Math.round(response.data.main.temp);
@@ -109,16 +122,17 @@ function showTemp(response) {
   let currentHumidity = Math.round(response.data.main.humidity);
   document.querySelector(
     "#humidity"
-  ).innerHTML = `Humidity: ${currentHumidity}%`;
+  ).innerHTML = `<strong>Humidity <i class="fas fa-tint"></i>: </strong> ${currentHumidity}%`;
+
   let currentWindSpeed = Math.round(response.data.wind.speed);
   document.querySelector(
     "#wind-speed"
-  ).innerHTML = `Wind Speed: ${currentWindSpeed}mph`;
+  ).innerHTML = `<strong> Windspeed <i class="fas fa-wind"></i>:</strong> ${currentWindSpeed}mph`;
 
   let conditions = response.data.weather[0].main;
   document.querySelector(
     "#currentWeather"
-  ).innerHTML = `Conditions: ${conditions}`;
+  ).innerHTML = `<strong> Condition <i class="fas fa-cloud"></i></strong>: ${conditions}`;
 
   let iconElement = document.querySelector("#mainIcon");
   iconElement.setAttribute(
@@ -136,7 +150,9 @@ function showForecast(response) {
   weekForecast.innerHTML = ` 
            <div class="col-3">
             <img
-              src="http://openweathermap.org/img/wn/10d@2x.png"
+              src="http://openweathermap.org/img/wn/${
+                forecast.weather[0].icon
+              }@2x.png"
               id="icon"
               class="emoji"
             />
@@ -148,11 +164,82 @@ function showForecast(response) {
                 <span> ${Math.round(forecast.main.temp_min)}°</span> 
               </h5>
               <div class="col-12">
-                <p>Monday</p>
+                ${formatHours(forecast.dt * 1000)}
               </div>
             </div>
           </div>
           <div class="vl"></div> `;
+
+  forecast = response.data.list[1];
+  weekForecast.innerHTML += ` 
+           <div class="col-3">
+            <img
+              src="http://openweathermap.org/img/wn/${
+                forecast.weather[0].icon
+              }@2x.png"
+              id="icon"
+              class="emoji"
+            />
+            <div class="col-12">
+              <h5 class="temp">
+                <strong class="day">${Math.round(
+                  forecast.main.temp_max
+                )}° </strong> 
+                <span> ${Math.round(forecast.main.temp_min)}°</span> 
+              </h5>
+              <div class="col-12">
+                <p>${formatHours(forecast.dt * 1000)}</p>
+              </div>
+            </div>
+          </div>
+          <div class="vl"></div> `;
+
+  forecast = response.data.list[2];
+  weekForecast.innerHTML += ` 
+           <div class="col-3">
+            <img
+              src="http://openweathermap.org/img/wn/${
+                forecast.weather[0].icon
+              }@2x.png"
+              id="icon"
+              class="emoji"
+            />
+            <div class="col-12">
+              <h5 class="temp">
+                <strong class="day">${Math.round(
+                  forecast.main.temp_max
+                )}° </strong> 
+                <span> ${Math.round(forecast.main.temp_min)}°</span> 
+              </h5>
+              <div class="col-12">
+                <p>${formatHours(forecast.dt * 1000)}</p>
+              </div>
+            </div>
+          </div>
+          <div class="vl"></div> `;
+
+  forecast = response.data.list[3];
+  weekForecast.innerHTML += ` 
+           <div class="col-3">
+            <img
+              src="http://openweathermap.org/img/wn/${
+                forecast.weather[0].icon
+              }@2x.png"
+              id="icon"
+              class="emoji"
+            />
+            <div class="col-12">
+              <h5 class="temp">
+                <strong class="day">${Math.round(
+                  forecast.main.temp_max
+                )}° </strong> 
+                <span> ${Math.round(forecast.main.temp_min)}°</span> 
+              </h5>
+              <div class="col-12">
+                <p>${formatHours(forecast.dt * 1000)}</p>
+              </div>
+            </div>
+          </div>`;
 }
 
 function search(event) {

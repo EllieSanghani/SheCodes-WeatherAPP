@@ -43,7 +43,7 @@
         </form>
       </div>
       <div class="currentInfo">
-        <h5 id="current-city">New York</h5>
+        <h5 id="current-city">Enter city above</h5>
         <h5 id="current-date">12.30pm</h5>
       </div>
       <div class="row">
@@ -54,7 +54,7 @@
             class="dayEmoji"
           />
 
-          <strong class="dayTemp">10° </strong>
+          <strong class="dayTemp">--</strong>
         </div>
         <div id="converter">
           <button class="cTemp">
@@ -68,27 +68,36 @@
       <main class="extraInfo">
         <div class="row">
           <div class="col-4">
-            <span id="humidity"><strong>Humidity: </strong> 12% </span> <br />
+            <span id="humidity"
+              ><strong>Humidity <i class="fas fa-tint"></i>: </strong> 12%
+            </span>
+            <br />
           </div>
           <div class="col-4">
-            <span id="wind-speed"> <strong>Wind: </strong> 10mph </span>
+            <span id="wind-speed">
+              <strong> Windspeed <i class="fas fa-wind"></i>:</strong> 10mph
+            </span>
           </div>
           <div class="col-4">
-            <span id="currentWeather"> <strong> Condition </strong> Rain </span>
+            <span id="currentWeather">
+              <strong> Condition <i class="fas fa-cloud"></i>:</strong> Rain
+            </span>
           </div>
         </div>
       </main>
 
-      <section class="week" id="forecast"></section>
+      <div class="week" id="forecast"></div>
+      <span
+        ><a
+          href="https://github.com/EllieSanghani/SheCodes-WeatherAPP"
+          target="_blank"
+        >
+          <br />
+          Git Hub Repository
+        </a></span
+      >
     </div>
 
     <script src="src/index.js"></script>
-    <a
-      href="https://github.com/EllieSanghani/SheCodes-WeatherAPP"
-      target="_blank"
-    >
-      <br />
-      Git Hub Repository
-    </a>
   </body>
 </html>
